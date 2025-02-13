@@ -1,0 +1,55 @@
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list__newtask {
+  border: 3px solid black;
+  background-color: white;
+  border-radius: 7px;
+  width: 60%;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.list__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.list__filter {
+  width: 40%;
+  padding-bottom: 10px;
+}
+
+.list__filter > button {
+  margin-right: 10px;
+}
+
+.list__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 40%;
+}
+
+.list__scroller {
+  flex: 1;
+  overflow: scroll;
+  height: calc(100vh - 200px);
+  padding-right: 10px;
+}
+
+.list__separator {
+  border-left: 2px solid black;
+  height: calc(100vh - 200px);
+  margin: 0 10px;
+}

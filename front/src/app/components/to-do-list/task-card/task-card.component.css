@@ -1,0 +1,48 @@
+.card {
+  border-radius: 7px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.card__header {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+}
+
+.card__header--low {
+  background-color: #B0C5A4;
+}
+
+.card__header--medium {
+  background-color: #EBC49F;
+}
+
+.card__header--high {
+  background-color: #D37676;
+}
+
+.card__header--done {
+  background-color: lightslategray;
+}
+
+.card__delete {
+  cursor: pointer;
+}
+.card__content {
+  padding: 5px 10px;
+  height: 40px;
+}
+
+.card__footer {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid black;
+}

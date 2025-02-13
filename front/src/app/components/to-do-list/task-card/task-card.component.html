@@ -1,0 +1,24 @@
+<div class="card">
+  <div
+    class="card__header"
+    [ngClass]="
+      task().complete !== true
+        ? 'card__header--' + task().priority.toLowerCase()
+        : 'card__header--done'
+    "
+  >
+    <div>ID: {{ task().id }}</div>
+    <div class="card__delete" (click)="emitDeleteTask()">X</div>
+  </div>
+  <div class="card__content">{{ task().label }}</div>
+  <div class="card__footer">
+    <button (click)="editTask()">Edit Task</button>
+    <button (click)="completeTask()">
+      @if (task().complete === true) {
+        Resume task
+      } @else {
+        Complete Task
+      }
+    </button>
+  </div>
+</div>

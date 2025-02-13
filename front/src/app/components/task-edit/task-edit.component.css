@@ -1,0 +1,26 @@
+.edit {
+    width: 100%;
+    background-color: lightpink;
+    display: flex;
+    justify-content: center;
+}
+
+.edit__card {
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.edit__card__line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit__card__footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}

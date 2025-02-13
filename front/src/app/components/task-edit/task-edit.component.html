@@ -1,0 +1,29 @@
+<div class="edit">
+  <div class="edit__card">
+    <div class="edit__card__line">
+      <div>Task ID</div>
+      <div>{{ task.id }}</div>
+    </div>
+    <div class="edit__card__line">
+      <label for="labelInput">Update label:</label>
+      <input #labelInput [(ngModel)]="task.label" />
+    </div>
+    <div class="edit__card__line">
+      <label for="completeInput">Is the task completed</label>
+      <input #completeInput type="checkbox" [(ngModel)]="task.complete" />
+    </div>
+    <div class="edit__card__line">
+      <label> Select priority</label>
+      <select [(ngModel)]="task.priority">
+        <option *ngFor="let priokey of getPriorityKeys()" [value]="priokey">
+          {{ priokey }}
+        </option>
+      </select>
+    </div>
+    <div class="edit__card__footer">
+      <button class="edit__card__button" (click)="updateTask()">
+        Update task
+      </button>
+    </div>
+  </div>
+</div>

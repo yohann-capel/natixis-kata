@@ -1,0 +1,54 @@
+<div class="list">
+  <div class="list__newtask">
+    <label
+      >Task label:
+      <input [(ngModel)]="newTaskLabel" placeholder="Create new task"
+    /></label>
+    <label
+      >Is task already done ? (y/N)
+      <input type="checkbox" [(ngModel)]="isCompleted"
+    /></label>
+    <label>
+      Select priority
+      <select [(ngModel)]="priority">
+        <option *ngFor="let priokey of getPriorityKeys()" [value]="priokey">
+          {{ priokey }}
+        </option>
+      </select>
+    </label>
+    <button (click)="createNewTask()">Create task</button>
+  </div>
+  <div class="list__title">
+    <h1>TO DO</h1>
+    <h1>COMPLETED</h1>
+  </div>
+  <div class="list__filter">
+    <button (click)="orderById()">Filter by id</button>
+    <button (click)="orderByPriority()">Filter by priority</button>
+  </div>
+  <div class="list__content">
+    <div class="list__scroller">
+      @for (task of tasksList; track task().id) {
+        @if (task().complete === false) {
+          <app-task-card
+            [task]="task()"
+            (updateTask)="updateTaskInList($event)"
+            (deleteTask)="deleteTask($event)"
+          ></app-task-card>
+        }
+      }
+    </div>
+    <div class="list__separator"></div>
+    <div class="list__scroller">
+      @for (task of tasksList; track task().id) {
+        @if (task().complete === true) {
+          <app-task-card
+            [task]="task()"
+            (updateTask)="updateTaskInList($event)"
+            (deleteTask)="deleteTask($event)"
+          ></app-task-card>
+        }
+      }
+    </div>
+  </div>
+</div>
